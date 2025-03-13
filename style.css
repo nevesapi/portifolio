@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #101010;
+  color: #fff;
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: sticky;
+  top: 0;
+}
+
+a {
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: 738px;
+  padding: 1rem;
+
+  background-color: #ffffff1e;
+  backdrop-filter: blur(10px);
+  color: #101010;
+
+  border-radius: 0.75rem;
+  border: 1px solid #ffffff74;
+}
+
+.header h1 {
+  font-weight: 300;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.btn-gradient-primary {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+.btn-gradient-primary:before {
+  content: "";
+  background: linear-gradient(108deg, #43cea2, #185a9d);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+}
+.btn-gradient-primary:after {
+  content: "";
+
+  background: #101010;
+
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  left: 1px;
+  right: 1px;
+
+  border-radius: 0.5rem;
+  z-index: -1;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+
+  margin-top: -135px;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.hero h2,
+.hero p,
+.hero a {
+  text-transform: uppercase;
+}
+
+.hero h2 {
+  font-size: 8rem;
+  font-weight: 300;
+
+  background-image: linear-gradient(-36deg, #185a9d, #43cea2);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  margin-top: 10rem;
+}
+
+.hero h2 + p {
+  margin: 2rem 0;
+  font-size: 2rem;
+}
+
+.hero .info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero p {
+  color: #ffffff99;
+  width: 50%;
+}
+
+.btn-action {
+  margin-top: 6rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+}
+
+.btn-action a {
+  font-size: 1rem;
+  padding: 1rem;
+}
