@@ -4,6 +4,7 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 html {
@@ -57,38 +58,49 @@ nav ul {
   gap: 1.25rem;
 }
 
-.btn-gradient-primary {
-  display: inline-block;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
-  overflow: hidden;
+nav ul li {
   position: relative;
-  z-index: 0;
+  padding: 0.25rem 0.5rem;
 }
 
-.btn-gradient-primary:before {
+nav ul li::before {
   content: "";
-  background: linear-gradient(108deg, #43cea2, #185a9d);
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   bottom: 0;
-  z-index: -2;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  transition: all 0.3s ease-in-out;
 }
-.btn-gradient-primary:after {
-  content: "";
 
+nav ul li:hover::before {
+  width: 100%;
+  background-image: linear-gradient(-36deg, #185a9d, #43cea2);
+}
+
+.teste {
+  background-size: 400% 400%;
+  /* background-image: linear-gradient(108deg, #43cea2, #185a9d); */
+  background-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+  padding: 0.125rem;
+}
+
+.btn-gradient-primary {
   background: #101010;
 
-  position: absolute;
-  top: 1px;
-  bottom: 1px;
-  left: 1px;
-  right: 1px;
-
   border-radius: 0.5rem;
-  z-index: -1;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+.teste:hover {
+  animation: mygradient 3s ease infinite;
 }
 
 .hero {
@@ -137,7 +149,6 @@ nav ul {
 
 .hero p {
   color: #ffffff99;
-  width: 50%;
 }
 
 .btn-action {
@@ -152,4 +163,16 @@ nav ul {
 .btn-action a {
   font-size: 1rem;
   padding: 1rem;
+}
+
+@keyframes mygradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
