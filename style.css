@@ -116,6 +116,9 @@ nav ul li:hover::before {
   flex-direction: column;
 
   text-align: center;
+
+  position: relative;
+  overflow: hidden;
 }
 
 .hero h2,
@@ -165,14 +168,45 @@ nav ul li:hover::before {
   padding: 1rem;
 }
 
+.animate {
+  height: 10rem;
+  width: 10rem;
+  background-image: linear-gradient(108deg, #ee7752, #43cea2, #437fce);
+  border-radius: 100%;
+  z-index: -3;
+  position: absolute;
+  top: 30rem;
+  left: 30rem;
+  opacity: 0.3;
+  animation: spinAndGrow 15s infinite ease-in-out;
+}
+
 @keyframes mygradient {
   0% {
     background-position: 0% 50%;
+    backdrop-filter: blur(0);
   }
   50% {
     background-position: 100% 50%;
+    backdrop-filter: blur(10px);
   }
   100% {
     background-position: 0% 50%;
+    backdrop-filter: blur(0);
+  }
+}
+
+@keyframes spinAndGrow {
+  0% {
+    transform: rotate(0deg) scale(1) translate(0, 0); /* Começa sem rotação e com tamanho normal */
+    opacity: 0.3;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.5) translate(-40vw, 20vh); /* Meio da animação, rotaciona 180 graus e aumenta o tamanho */
+    opacity: 0.6;
+  }
+  100% {
+    transform: rotate(360deg) scale(1) translate(0, 0); /* Finaliza com 360 graus de rotação e tamanho original */
+    opacity: 0.3;
   }
 }
